@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "injection",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
