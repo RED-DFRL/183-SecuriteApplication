@@ -19,14 +19,12 @@ const connectToDatabaseMiddleware = async (req, res, next) => {
 router.post('/', connectToDatabaseMiddleware, async (req, res) => {
   const { username, password } = req.body;
 
-   
-
   try {
 
     const safeUsername = req.dbConnection.escape(username);
     const safePassword = req.dbConnection.escape(password);
     
-    const queryString = `SELECT * FROM t_users WHERE useName = '${safeUsername}' AND usePassword = '${safePassword}'`;
+    const queryString = `SELECT * FROM t_users WHERE useName = ? AND usePassword = ?`;
 
     const [rows] = await req.dbConnection.query(queryString);
     if (rows.length > 0) {

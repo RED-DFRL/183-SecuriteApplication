@@ -2,10 +2,10 @@ import mysql from "mysql2/promise";
 
 const dbConfig = {
   host: 'db',
-  user: 'root',
-  password: 'root',
+  user: 'Admin',
+  password: 'TresStrong',
   database: 'db_authentication',
-  multipleStatements: true
+  multipleStatements: false // empêche les requetes empilées
 };
 
 
